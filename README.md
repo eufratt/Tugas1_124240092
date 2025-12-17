@@ -1,56 +1,99 @@
 
+# Toko Kelontong - Sorting dan Searching (C++)
 
-# Toko Kelontong - Program C++
+Program ini merupakan aplikasi sederhana berbasis **C++** untuk mengelola data barang pada **toko kelontong**.
+Program menyediakan fitur input data, menampilkan data yang telah diurutkan, serta pencarian data menggunakan **Binary Search** dan **Sequential Search**.
 
-Program ini adalah aplikasi **manajemen data barang pada toko kelontong** berbasis C++.
-Fitur utama mencakup: input data, menampilkan daftar barang, dan pencarian data berdasarkan nama atau harga. ([GitHub][1])
+## Deskripsi Program
 
-## Fitur
+Data barang disimpan dalam bentuk **array struct** yang berisi nama, harga, dan stok.
+Sebelum dilakukan pencarian berdasarkan nama, data akan diurutkan terlebih dahulu menggunakan **Bubble Sort** agar Binary Search dapat bekerja dengan benar.
 
-* Tambah data barang (nama, harga, stok) ([GitHub][1])
-* Tampilkan data barang yang sudah diurutkan berdasarkan nama ([GitHub][1])
-* Cari data barang berdasarkan:
+## Fitur Program
 
-  * Nama barang (binary search) ([GitHub][1])
-  * Harga barang (sequential search) ([GitHub][1])
-* Ulangi pencarian sampai pengguna berhenti ([GitHub][1])
-* Navigasi kembali ke menu utama atau keluar dari program ([GitHub][1])
+1. **Input Data Barang**
+
+   * Menyimpan nama barang, harga, dan stok
+   * Data disimpan ke dalam array
+   * Jumlah data maksimal 100 barang
+
+2. **Tampilkan Data Barang**
+
+   * Menampilkan seluruh data barang dalam bentuk tabel
+   * Data diurutkan berdasarkan **nama barang (ascending)** menggunakan Bubble Sort
+
+3. **Pencarian Data**
+
+   * Pencarian berdasarkan **nama barang** menggunakan Binary Search
+   * Pencarian berdasarkan **harga barang** menggunakan Sequential Search
+   * Dapat melakukan pencarian berulang
+
+4. **Navigasi Menu**
+
+   * Kembali ke menu utama
+   * Keluar dari program
+
+## Struktur Data
+
+```cpp
+struct database {
+    string nama;
+    int harga;
+    int stok;
+};
+```
+
+## Algoritma yang Digunakan
+
+* **Bubble Sort**
+
+  * Digunakan untuk mengurutkan data berdasarkan nama barang
+* **Binary Search**
+
+  * Digunakan untuk mencari barang berdasarkan nama
+  * Data harus sudah terurut
+* **Sequential Search**
+
+  * Digunakan untuk mencari barang berdasarkan harga
 
 ## Struktur Program
 
-* **main** - Menampilkan menu utama dan menerima pilihan user ([GitHub][1])
-* **input** - Input jumlah barang dan detailnya ([GitHub][1])
-* **tampil** - Menampilkan seluruh barang (urut alfabet) ([GitHub][1])
-* **searching** - Menu pencarian data ([GitHub][1])
-* **bubblesort** - Mengurutkan nama barang ([GitHub][1])
-* **binary_search** - Cari barang berdasarkan nama ([GitHub][1])
-* **sequential_search** - Cari barang berdasarkan harga ([GitHub][1])
-* **ke_menu_utama & cari_lagi** - Navigasi user ([GitHub][1])
+```
+/
+├─ Tugas1_124240092.cpp   # Source code utama
+└─ README.md              # Dokumentasi
+```
 
-## Cara Menjalankan
+## Cara Menjalankan Program
 
-1. Pastikan compiler C++ terpasang (misal g++).
-2. Clone repo ini.
-3. Compile program:
+1. Pastikan compiler C++ sudah terpasang (contoh: g++)
+2. Compile program:
 
    ```
    g++ Tugas1_124240092.cpp -o toko_kelontong
    ```
-4. Jalankan:
+3. Jalankan program:
 
    ```
    ./toko_kelontong
    ```
 
-## Contoh Penggunaan
+> Catatan: Program menggunakan `system("cls")` dan `system("pause")`, sehingga disarankan dijalankan di Windows.
 
-1. Pilih **1** untuk input data barang.
-2. Setelah selesai, kembali ke menu utama.
-3. Pilih **2** untuk melihat daftar barang terurut.
-4. Pilih **3** untuk mencari barang berdasarkan nama atau harga.
-5. Pilih **4** untuk keluar dari program.
+## Alur Penggunaan Program
+
+1. Pilih menu **Input Data** untuk memasukkan barang
+2. Pilih menu **Tampil Data** untuk melihat data yang sudah diurutkan
+3. Pilih menu **Pencarian Data** untuk mencari barang berdasarkan nama atau harga
+4. Pilih **Keluar** untuk mengakhiri program
+
+## Tujuan Pembelajaran
+
+* Memahami penggunaan array dan struct
+* Menerapkan algoritma sorting dan searching
+* Memahami perbedaan Binary Search dan Sequential Search
+* Melatih logika pemrograman terstruktur
 
 ## License
 
-Program ini bersifat open source dan bebas digunakan untuk tugas atau pembelajaran.
-
+Program ini dibuat untuk **keperluan pembelajaran dan tugas kuliah**.
